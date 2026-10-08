@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Openings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- room -->
+  <main class="room">
+    <section class="stage" id="stage" aria-label="Doors built from sound">
+      <div class="track" id="track">
+        <div class="doors" id="doorsLayer"></div>
+        <div class="playhead" id="playhead" hidden></div>
+        <div class="floor"></div>
+      </div>
+    </section>
+
+    <!-- wall text like a museum label -->
+    <div class="wall-text">
+      <h1>Openings</h1>
+      <p class="credit">Doors and footsteps at the MFA</p>
+      <p class="key">For every noise heard, a door is placed. Sounds of doors opening bring the tall doors, while footsteps bring small doors. Louder sounds make bigger doors and brighter sounds let in paler light.</p>
+    </div>
+
+    <p class="empty" id="emptyMessage">Loading sounds and images.</p>
+  </main>
+
+  <!-- controls -->
+  <footer class="controls">
+    <button class="button button--primary" id="playButton" type="button" disabled>Loading</button>
+    <label class="slider">
+      Fewer doors
+      <input id="sensitivitySlider" type="range" min="0" max="100" value="55" aria-label="Sensitivity">
+      More doors
+    </label>
+    <p class="status" id="statusText" aria-live="polite"></p>
+  </footer>
+
+</body>
+</html>
