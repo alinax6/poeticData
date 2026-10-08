@@ -174,7 +174,7 @@
     background: var(--baseboard);
     opacity: 0.7;
   }
-  .wall-text .credit { margin: 0 0 0.6em; font-weight: 500; font-size: 1.2rem; font-family: "Cedarville Cursive", cursive; }
+  .wall-text .credit { margin: 0 0 0.6em; font-weight: 500; font-size: 1.3rem; font-family: "Cedarville Cursive", cursive; }
   .wall-text .key { margin: 0; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; text-wrap: pretty; }
   
   /* credit and key fade out and fold away and only the title stays */
