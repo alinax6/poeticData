@@ -1,0 +1,441 @@
+{
+    "regionData": {
+      "High income": {
+        "Fishing related": 31.7,
+        "Fishing weights": 9.6,
+        "Cans (drink)": 8,
+        "Glass bottles": 7.2,
+        "Plastic bottles": 6,
+        "Plastic bags": 4.9,
+        "Food containers": 3.9,
+        "Wrappers": 2.6,
+        "Synthetic rope": 2.2,
+        "Plastic lids": 2.1
+      },
+      "East Asia and Pacific": {
+        "Wrappers": 18.2,
+        "Plastic bags": 14,
+        "Plastic bottles": 11.1,
+        "Fishing related": 7.2,
+        "Glass bottles": 5.2,
+        "Food containers": 4.2,
+        "Cans (drink)": 3.4,
+        "Clothing": 2.8,
+        "Synthetic rope": 2.8,
+        "Fishing net": 2.7
+      },
+      "South Asia": {
+        "Plastic bottles": 12.9,
+        "Fishing related": 12.2,
+        "Plastic bags": 7.1,
+        "Wrappers": 6.4,
+        "Wood": 4.2,
+        "Cans (drink)": 4.1,
+        "Fishing net": 3.8,
+        "Clothing": 3.7,
+        "Glass bottles": 3.7,
+        "Industrial packaging": 3
+      },
+      "Latin America and the Caribbean": {
+        "Plastic bags": 20.1,
+        "Plastic bottles": 10.4,
+        "Fishing related": 10.3,
+        "Food containers": 8.8,
+        "Glass bottles": 4.8,
+        "Cans (drink)": 4.6,
+        "Fishing weights": 4.6,
+        "Plastic lids": 4.5,
+        "Wrappers": 4.4,
+        "Clothing": 2.5
+      },
+      "Sub-Saharan Africa": {
+        "Plastic bottles": 19.2,
+        "Glass bottles": 10.4,
+        "Plastic bags": 9,
+        "Cans (drink)": 7.4,
+        "Plastic lids": 5.6,
+        "Food containers": 4.2,
+        "Rope & nets (fabric)": 4.2,
+        "Fishing related": 3.7,
+        "Clothing": 3.6,
+        "Bottle lids": 2.8
+      },
+      "North Africa and Middle East": {
+        "Food containers": 17.1,
+        "Fishing related": 14.1,
+        "Plastic bags": 12.3,
+        "Plastic bottles": 9,
+        "Cans (drink)": 6.8,
+        "Glass bottles": 3.7,
+        "Plastic lids": 3.5,
+        "Wrappers": 3.5,
+        "Fishing weights": 3.4,
+        "Cans (food)": 3.1
+      }
+    },
+    "regionOrder": [
+      "High income",
+      "East Asia and Pacific",
+      "Latin America and the Caribbean",
+      "North Africa and Middle East",
+      "Sub-Saharan Africa",
+      "South Asia"
+    ],
+    "regionShortNames": {
+      "High income": "High income",
+      "East Asia and Pacific": "East Asia & Pacific",
+      "South Asia": "South Asia",
+      "Latin America and the Caribbean": "Latin America & Caribbean",
+      "Sub-Saharan Africa": "Sub-Saharan Africa",
+      "North Africa and Middle East": "North Africa & Middle East"
+    },
+    "regionHints": {
+      "High income": "U.S., Canada, Europe, Japan, Australia\u2026",
+      "East Asia and Pacific": "China, Indonesia, Philippines, Vietnam\u2026",
+      "South Asia": "India, Bangladesh, Sri Lanka, Pakistan\u2026",
+      "Latin America and the Caribbean": "Brazil, Mexico, Colombia, the Caribbean\u2026",
+      "Sub-Saharan Africa": "Nigeria, Kenya, Ghana, Senegal\u2026",
+      "North Africa and Middle East": "Egypt, Morocco, Tunisia, Lebanon\u2026"
+    },
+    "itemGroups": {
+      "Plastic bags": "takeout",
+      "Plastic bottles": "takeout",
+      "Food containers": "takeout",
+      "Wrappers": "takeout",
+      "Fishing related": "fishing",
+      "Fishing net": "fishing",
+      "Fishing weights": "fishing",
+      "Synthetic rope": "fishing",
+      "Rope & nets (fabric)": "fishing",
+      "Cans (drink)": "other",
+      "Cans (food)": "other",
+      "Glass bottles": "other",
+      "Plastic lids": "other",
+      "Bottle lids": "other",
+      "Industrial packaging": "other",
+      "Clothing": "other",
+      "Wood": "other"
+    },
+    "itemImages": {
+      "Plastic bags": "bag.png",
+      "Plastic bottles": "plasticBottle.png",
+      "Food containers": "foodContainer.png",
+      "Wrappers": "wrapper.png",
+      "Fishing related": "net.png",
+      "Fishing net": "net.png",
+      "Fishing weights": "fishingWeight.png",
+      "Synthetic rope": "rope.png",
+      "Rope & nets (fabric)": "rope.png",
+      "Cans (drink)": "can.png",
+      "Cans (food)": "can.png",
+      "Glass bottles": "glassBottle.png",
+      "Plastic lids": "lid.png",
+      "Bottle lids": "plasticCap.png",
+      "Industrial packaging": "industrialPackaging.png",
+      "Clothing": "clothing.png",
+      "Wood": "wood.png"
+    },
+    "allImageFiles": [
+      "bag.png",
+      "plasticBottle.png",
+      "foodContainer.png",
+      "cutlery.png",
+      "wrapper.png",
+      "rope.png",
+      "net.png",
+      "fishingWeight.png",
+      "line.png",
+      "plasticCap.png",
+      "lid.png",
+      "industrialPackaging.png",
+      "glassBottle.png",
+      "can.png",
+      "clothing.png",
+      "wood.png"
+    ],
+    "guessChoices": [
+      {
+        "label": "Bags",
+        "matches": [
+          "Plastic bags"
+        ],
+        "images": [
+          "bag.png"
+        ]
+      },
+      {
+        "label": "Plastic bottles",
+        "matches": [
+          "Plastic bottles"
+        ],
+        "images": [
+          "plasticBottle.png"
+        ]
+      },
+      {
+        "label": "Food containers & cutlery",
+        "matches": [
+          "Food containers"
+        ],
+        "images": [
+          "foodContainer.png",
+          "cutlery.png"
+        ]
+      },
+      {
+        "label": "Wrappers",
+        "matches": [
+          "Wrappers"
+        ],
+        "images": [
+          "wrapper.png"
+        ]
+      },
+      {
+        "label": "Synthetic rope",
+        "matches": [
+          "Synthetic rope",
+          "Rope & nets (fabric)"
+        ],
+        "images": [
+          "rope.png"
+        ]
+      },
+      {
+        "label": "Fishing items",
+        "matches": [
+          "Fishing related",
+          "Fishing net",
+          "Fishing weights"
+        ],
+        "images": [
+          "net.png",
+          "fishingWeight.png",
+          "line.png"
+        ]
+      },
+      {
+        "label": "Plastic caps & lids",
+        "matches": [
+          "Plastic lids",
+          "Bottle lids"
+        ],
+        "images": [
+          "plasticCap.png",
+          "lid.png"
+        ]
+      },
+      {
+        "label": "Industrial packaging",
+        "matches": [
+          "Industrial packaging"
+        ],
+        "images": [
+          "industrialPackaging.png"
+        ]
+      },
+      {
+        "label": "Glass bottles",
+        "matches": [
+          "Glass bottles"
+        ],
+        "images": [
+          "glassBottle.png"
+        ]
+      },
+      {
+        "label": "Cans",
+        "matches": [
+          "Cans (drink)",
+          "Cans (food)"
+        ],
+        "images": [
+          "can.png"
+        ]
+      }
+    ],
+    "groupColors": {
+      "takeout": "#e4572e",
+      "fishing": "#17808e",
+      "other": "#b9ad97"
+    },
+    "groupLabels": {
+      "takeout": "Takeout",
+      "fishing": "Fishing gear",
+      "other": "Everything else"
+    },
+    "materialShares": [
+      {
+        "name": "Plastic",
+        "share": 80,
+        "color": "#1f3b5c"
+      },
+      {
+        "name": "Metal",
+        "share": 7,
+        "color": "#8a8f98"
+      },
+      {
+        "name": "Glass",
+        "share": 5,
+        "color": "#7fb7a8"
+      },
+      {
+        "name": "Fabric",
+        "share": 3,
+        "color": "#c9a26b"
+      },
+      {
+        "name": "Other materials",
+        "share": 5,
+        "color": "#e2dccf"
+      }
+    ],
+    "journeyStages": [
+      {
+        "name": "River",
+        "depth": 0,
+        "fact": "Trash starts on land. In river waters, plastic food containers and cutlery were the most-reported items.",
+        "items": [
+          {
+            "image": "foodContainer.png",
+            "x": 20,
+            "y": 30
+          },
+          {
+            "image": "cutlery.png",
+            "x": 38,
+            "y": 36
+          },
+          {
+            "image": "bag.png",
+            "x": 62,
+            "y": 28
+          },
+          {
+            "image": "wrapper.png",
+            "x": 78,
+            "y": 34
+          }
+        ]
+      },
+      {
+        "name": "Shoreline",
+        "depth": 0.15,
+        "fact": "On beaches, 83% of items were plastic. Food containers and cutlery are very common, and wrappers pile up near the coast.",
+        "items": [
+          {
+            "image": "wrapper.png",
+            "x": 18,
+            "y": 32
+          },
+          {
+            "image": "foodContainer.png",
+            "x": 34,
+            "y": 38
+          },
+          {
+            "image": "wrapper.png",
+            "x": 52,
+            "y": 30
+          },
+          {
+            "image": "plasticBottle.png",
+            "x": 70,
+            "y": 36
+          },
+          {
+            "image": "bag.png",
+            "x": 84,
+            "y": 30
+          }
+        ]
+      },
+      {
+        "name": "Nearshore waters",
+        "depth": 0.35,
+        "fact": "Within 100 km of land, 95% of the floating trash at the surface was plastic. Takeout packaging still dominates in most regions.",
+        "items": [
+          {
+            "image": "bag.png",
+            "x": 22,
+            "y": 26
+          },
+          {
+            "image": "wrapper.png",
+            "x": 42,
+            "y": 22
+          },
+          {
+            "image": "plasticBottle.png",
+            "x": 60,
+            "y": 28
+          },
+          {
+            "image": "net.png",
+            "x": 78,
+            "y": 40
+          }
+        ]
+      },
+      {
+        "name": "Open ocean",
+        "depth": 0.6,
+        "fact": "Far from shore, the wrappers drop out. Fishing-related items are the most common litter in open waters.",
+        "items": [
+          {
+            "image": "netWhite.png",
+            "x": 24,
+            "y": 34
+          },
+          {
+            "image": "ropeWhite.png",
+            "x": 44,
+            "y": 46
+          },
+          {
+            "image": "fishingWeightWhite.png",
+            "x": 62,
+            "y": 38
+          },
+          {
+            "image": "lineWhite.png",
+            "x": 80,
+            "y": 50
+          }
+        ]
+      },
+      {
+        "name": "Deep seafloor",
+        "depth": 1,
+        "fact": "At the bottom, plastic bottles alone make up 23% of items. 77% of everything down here is plastic.",
+        "items": [
+          {
+            "image": "plasticBottleWhite.png",
+            "x": 20,
+            "y": 82
+          },
+          {
+            "image": "plasticBottleWhite.png",
+            "x": 38,
+            "y": 86
+          },
+          {
+            "image": "glassBottleWhite.png",
+            "x": 56,
+            "y": 84
+          },
+          {
+            "image": "plasticBottleWhite.png",
+            "x": 72,
+            "y": 80
+          },
+          {
+            "image": "canWhite.png",
+            "x": 86,
+            "y": 86
+          }
+        ]
+      }
+    ]
+  }

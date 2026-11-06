@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whose Trash Is It?</title>
+  <meta name="description" content="Ocean litter looks different depending on which coast you're on.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Whose Trash<br>Is It?</h1>
+      <p class="dek">Ocean litter looks different depending on which coast you are standing on.</p>
+    </div>
+    <div class="hero-pile-column">
+      <div class="pile-box hero-pile" id="hero-pile-box">
+        <canvas id="hero-canvas" aria-label="A pile of falling ocean trash"></canvas>
+        <div class="tooltip" hidden></div>
+      </div>
+      <p class="pile-hint">Click to add more trash</p>
+    </div>
+  </header>
+
+  <!-- guess the coast -->
+  <section class="prose" id="intro">
+    <p>Picture the water off the coast nearest you. Now picture the trash floating in it.</p>
+    <p>Make a guess before you see any data.</p>
+  </section>
+
+  <section class="game reveal" id="guess">
+    <h2>Guess the coast</h2>
+    <div class="game-step">
+      <p class="game-question"><span class="step-num">1</span> Pick a coast.</p>
+      <div class="choice-grid" id="region-choices"></div>
+    </div>
+    <div class="game-step is-locked" id="item-step">
+      <p class="game-question"><span class="step-num">2</span> What is the most common type of trash in the water within 100 km of that coast?</p>
+      <div class="choice-grid items" id="item-choices"></div>
+    </div>
+    <div class="game-result" id="game-result" hidden></div>
+  </section>
+
+  <!-- global picture -->
+  <section class="scrolly" id="global">
+    <div class="scrolly-graphic">
+      <div class="graphic-header">
+        <p class="graphic-title">If the ocean held 100 pieces of litter…</p>
+        <p class="graphic-stats" id="waffle-caption"></p>
+      </div>
+      <div class="waffle" id="waffle" aria-label="100 squares, one per piece of litter"></div>
+      <div class="legend" id="waffle-legend"></div>
+    </div>
+    <div class="scrolly-steps">
+      <div class="step" data-waffle="materials">
+        <h2 class="step-heading">The global picture</h2>
+        <p>Scientists led by Carmen Morales-Caselles pooled samples of <strong>more than 12 million pieces of litter</strong> from 7 major river and ocean environments around the world.</p>
+        <p><strong>80%</strong> was plastic, 7% metal, 5% glass, and 3% fabric.</p>
+      </div>
+      <div class="step" data-waffle="takeout">
+        <p>Four takeout items (single-use <strong class="hl-takeout">bags, bottles, food containers and wrappers</strong>) made up <strong class="hl-takeout">44%</strong> of the trash counted.</p>
+      </div>
+      <div class="step" data-waffle="topten">
+        <p>The study sorted litter into 112 item types, but the <strong>top 10</strong> alone make up around <strong>75%</strong> of all the litter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- whose trash is it -->
+  <section class="scrolly" id="scrolly">
+    <div class="scrolly-graphic">
+      <div class="graphic-header">
+        <p class="graphic-title" id="scrolly-title">Top 10 items</p>
+        <p class="graphic-stats" id="scrolly-stats"></p>
+      </div>
+      <div class="pile-box" id="scrolly-pile-box">
+        <canvas id="scrolly-canvas" aria-label="A pile of the region's top 10 litter items, each sized by its share"></canvas>
+        <div class="tooltip" hidden></div>
+      </div>
+      <div class="legend" id="scrolly-legend"></div>
+    </div>
+
+    <div class="scrolly-steps">
+      <div class="step" data-region="High income" data-highlight="">
+        <h2 class="step-heading">Whose trash is it?</h2>
+        <p>Here are the <strong>top 10 items</strong> floating off the world's high-income coasts, like the U.S., Canada, United Kingdom, etc. Each item is sized by its share of all the litter found there.</p>
+        <p class="step-note">Hover over any piece to see what it is.</p>
+      </div>
+      <div class="step" data-region="High income" data-highlight="fishing">
+        <p>The largest percentage of litter was fishing gear. <strong class="hl-fishing">43.5%</strong> of the litter is fishing items, weights and rope. "Fishing related" items alone are 31.7%, the greatest number in this dataset.</p>
+      </div>
+      <div class="step" data-region="High income" data-highlight="takeout">
+        <p>Takeout trash took up <strong class="hl-takeout">17.4%</strong> of the litter. Bags, bottles, food containers and wrappers <strong>together</strong> are smaller than the fishing items alone.</p>
+      </div>
+      <div class="step" data-region="East Asia and Pacific" data-highlight="takeout">
+        <p>In <strong>East Asia & the Pacific</strong>. The pile flips to <strong class="hl-takeout">47.5%</strong> takeout. Wrappers alone are 18.2%.</p>
+      </div>
+      <div class="step" data-region="Latin America and the Caribbean" data-highlight="takeout">
+        <p>In <strong>Latin America & the Caribbean</strong>, plastic bags are most frequently found at <strong class="hl-takeout">20.1%</strong>. Takeout totals <strong class="hl-takeout">43.7%</strong>.</p>
+      </div>
+      <div class="step" data-region="North Africa and Middle East" data-highlight="takeout">
+        <p>In <strong>North Africa & the Middle East</strong>, food containers lead at 17.1%. Takeout totals <strong class="hl-takeout">41.9%</strong>.</p>
+        <p>The global "44% takeout" headline is true on average, but not true everywhere, especially on the richest coasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore" id="explore">
+    <div class="prose">
+      <h3>Drop every coast's pile</h3>
+      <p>Pick a region. Hover over the legend to light up one kind of trash.</p>
+    </div>
+    <div class="tabs" id="explore-tabs" role="tablist"></div>
+    <div class="explore-layout">
+      <div class="pile-box" id="explore-pile-box">
+        <canvas id="explore-canvas" aria-label="Pile of the chosen region's top 10 litter items"></canvas>
+        <div class="tooltip" hidden></div>
+      </div>
+      <aside class="explore-side">
+        <p class="explore-region" id="explore-region"></p>
+        <ol class="top-list" id="explore-list"></ol>
+        <div class="legend" id="explore-legend"></div>
+        <button class="button-ghost" id="explore-redrop">Drop it again ↻</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- out to sea -->
+  <section class="journey" id="journey">
+    <div class="journey-graphic">
+      <!-- sketchy outline behind the water -->
+      <div class="sea-outline" aria-hidden="true"><div class="sea-outline-shape"></div></div>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="sketchy-outline" x="-5%" y="-5%" width="115%" height="115%">
+          <!-- grow the shape 3.5px -->
+          <feMorphology in="SourceAlpha" operator="dilate" radius="3.5" result="grown" />
+          <!-- wobble the edge -->
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="5" result="noise" />
+          <feDisplacementMap in="grown" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" result="wobbly" />
+          <feFlood flood-color="#1b1d22" />
+          <feComposite in2="wobbly" operator="in" result="ink" />
+          <feOffset in="ink" dx="8" dy="8" result="shadow" />
+          <feMerge><feMergeNode in="shadow" /><feMergeNode in="ink" /></feMerge>
+        </filter>
+      </svg>
+      <div class="sea-scene" id="sea-scene">
+        <div class="sea-water" id="sea-water"></div>
+        <div class="sea-items" id="sea-items"></div>
+        <div class="depth-gauge" id="depth-gauge"></div>
+      </div>
+    </div>
+    <div class="journey-steps" id="journey-steps">
+      <!-- Filled by script.js from data.json -->
+    </div>
+  </section>
+
+  <section class="prose" id="closing">
+    <h2>So whose trash is it?</h2>
+    <p>On high-income coasts like the U.S., the litter in the water is mostly fishing gear. Almost everywhere else, it is mostly the packaging from food and drinks bought on the go.</p>
+    <p>Either way, it is human made trash.</p>
+  </section>
+
+  <!-- appendix -->
+  <section class="appendix" id="appendix">
+    <h2>Appendix: the data</h2>
+    <label for="appendix-select">Select a region</label>
+    <select id="appendix-select"></select>
+    <table class="data-table" id="appendix-table">
+      <thead><tr><th>#</th><th>Item</th><th>Group</th><th>Share of nearshore litter</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>About the data</h3>
+    <ul>
+      <li>The dataset lists only each region's top 10 items, so each column does not add up to 100%.</li>
+      <li>Shares are of all litter counted in nearshore waters, within 100 km of the coast.</li>
+      <li>"High income" is an income group, not a place. This is how the World Bank groups countries.</li>
+      <li>The data was published in 2021. The study included samples of more than 12 million litter items from 7 major river and ocean environments.</li>
+      <li>In the piles, each item's area is proportional to its share.</li>
+      <li>Takeout: plastic bags, plastic bottles, food containers and wrappers. Fishing gear: fishing-related items, nets, weights and rope.</li>
+    </ul>
+
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://ourworldindata.org/grapher/waste-items-ocean-region">Our World in Data: Most common items of waste in the ocean by region</a></li>
+      <li><a href="https://archive.ourworldindata.org/20260511-092124/grapher/most-common-waste-rivers-oceans.html">Our World in Data: What are the most common items of waste found in rivers and oceans?</a></li>
+      <li><a href="https://www.packaginginsights.com/news/global-study-take-out-packaging-is-most-abundant-aquatic-polluter-producers-and-consumers-share-responsibility.html">PackagingInsights: Global study: Take-out packaging is most abundant aquatic polluter</a></li>
+      <li><a href="https://foodpackagingforum.org/news/food-packaging-identified-as-primary-source-of-aquatic-litter">Food Packaging Forum: Food packaging identified as primary source of aquatic litter</a></li>
+      <li>Original study: Morales-Caselles, C. et al. (2021). An inshore–offshore sorting system revealed from global classification of ocean litter. <em>Nature Sustainability</em> 4, 484–493.</li>
+    </ul>
+  </section>
+
+
+  <!-- Matter.js physics (falling piles) -->
+  <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
