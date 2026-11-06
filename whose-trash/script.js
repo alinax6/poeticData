@@ -504,8 +504,7 @@ function checkGuess(guessedChoice, guessedButton) {
 
   gameResult.innerHTML = `
     <p class="big">${isRight ? "You got it!" : "Not quite."}</p>
-    <p>${detail}</p>
-    <p><a href="#global">Keep scrolling to see the bigger picture ↓</a></p>`;
+    <p>${detail}</p>`;
   gameResult.hidden = false;
 }
 
