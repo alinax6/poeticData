@@ -26,7 +26,7 @@
 
     --section-gap: var(--space-9);
 
-    --prose-width: 800px;
+    --prose-width: 640px;
     --shadow: 4px 4px 0 var(--line);
   }
 
@@ -697,6 +697,17 @@
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
   .reveal.is-visible { opacity: 1; transform: none; }
 
+  @media (min-width: 861px) and (max-width: 1180px) {
+    .scrolly, .journey { padding: 0 var(--space-5); gap: var(--space-5); }
+    .scrolly-steps { margin: 0; }
+    .explore { padding: 0 var(--space-5); }
+  }
+
+  @media (min-width: 861px) and (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; padding: var(--space-6) var(--space-5) var(--space-5); }
+    .hero h1 { font-size: min(6.5rem, calc((100vw - 80px) / 8.1)); }
+  }
+
   @media (max-width: 860px) {
     :root { --section-gap: var(--space-8); }
 
@@ -714,6 +725,17 @@
     .scrolly-graphic, .journey-graphic { grid-column: 1; height: 80vh; top: 10vh; }
     .scrolly-steps, .journey-steps { grid-column: 1; position: relative; z-index: 2; padding: 60vh 0 30vh; }
     .scrolly-steps { margin: 0 var(--space-3); }
+
+    .journey-graphic {
+      top: 12px;
+      height: calc(50vh - 24px);
+      z-index: 3;
+      background: var(--paper);
+      box-shadow: 0 0 0 12px var(--paper);
+    }
+
+    .sea-items { inset: 45% 0 0 0; }
+    .depth-gauge { gap: 2px; font-size: 0.7rem; }
     .step { opacity: 0.95; }
 
     .explore { padding: 0 var(--space-2); }

@@ -497,14 +497,15 @@ function checkGuess(guessedChoice, guessedButton) {
   if (isRight) {
     detail = `Off ${regionLabel}, ${correctChoice.label.toLowerCase()} make up ${formatPercent(numberOneItem.share)} of the litter.`;
   } else if (guessRank > 0) {
-    detail = `Off ${regionLabel}, the most common item is <strong>${correctChoice.label.toLowerCase()}</strong> at ${formatPercent(numberOneItem.share)}. Your guess ranks #${guessRank}, at ${formatPercent(guessShare)}.`;
+    detail = `Off ${regionLabel}, the #1 item is <strong>${correctChoice.label.toLowerCase()}</strong> at ${formatPercent(numberOneItem.share)}. Your guess ranks #${guessRank}, at ${formatPercent(guessShare)}.`;
   } else {
-    detail = `Off ${regionLabel}, the most common item is <strong>${correctChoice.label.toLowerCase()}</strong> at ${formatPercent(numberOneItem.share)}. Your guess isn't even in the top 10.`;
+    detail = `Off ${regionLabel}, the #1 item is <strong>${correctChoice.label.toLowerCase()}</strong> at ${formatPercent(numberOneItem.share)}. Your guess isn't even in the top 10.`;
   }
 
   gameResult.innerHTML = `
     <p class="big">${isRight ? "You got it!" : "Not quite."}</p>
-    <p>${detail}</p>`;
+    <p>${detail}</p>
+    <p><a href="#global">Keep scrolling to see the bigger picture ↓</a></p>`;
   gameResult.hidden = false;
 }
 
@@ -587,8 +588,8 @@ function showWaffle(stateName) {
 
   const legendEntries = {
     materials: materialShares.map(material => [material.color, `${material.name} ${material.share}%`]),
-    takeout: [[groupColors.takeout, "Bags, bottles, food containers & wrappers = 44%"]],
-    topten: [["#1b1d22", "Top 10 item types ≈ 75% of litter"]]
+    takeout: [[groupColors.takeout, "Bags, bottles, food containers & wrappers 44%"]],
+    topten: [["#1b1d22", "Top 10 item types ≈ 75%"]]
   };
   const captions = {
     materials: "By material",
@@ -783,14 +784,14 @@ appendixSelect.addEventListener("change", () => showAppendixRegion(appendixSelec
 showAppendixRegion(regionOrder[0]);
 
 // Scroll watchers (steps activate at mid-screen)
-function watchSteps(stepElements, onStepActivate) {
+function watchSteps(stepElements, onStepActivate, activationLine = "-50% 0px -50% 0px") {
   const watcher = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       stepElements.forEach(step => step.classList.toggle("is-active", step === entry.target));
       onStepActivate(entry.target);
     });
-  }, { rootMargin: "-50% 0px -50% 0px" });
+  }, { rootMargin: activationLine });
   stepElements.forEach(step => watcher.observe(step));
 }
 
@@ -807,7 +808,9 @@ const scrollyStartWatcher = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 scrollyStartWatcher.observe(document.getElementById("scrolly-pile-box"));
 
-watchSteps([...document.querySelectorAll(".journey-step")], step => showJourneyStage(Number(step.dataset.stage)));
+// On phones the sea sits in the top half, so stages switch at 70% down instead of the middle
+const journeyLine = window.matchMedia("(max-width: 860px)").matches ? "-70% 0px -30% 0px" : "-50% 0px -50% 0px";
+watchSteps([...document.querySelectorAll(".journey-step")], step => showJourneyStage(Number(step.dataset.stage)), journeyLine);
 
 const explorerWatcher = new IntersectionObserver(entries => {
   if (!entries[0].isIntersecting) return;
